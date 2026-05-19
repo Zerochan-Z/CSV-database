@@ -4,7 +4,6 @@
 #pandas is excel toolkit
 #setting up pandas as shortform "pd"
 import pandas as pd
-
 # The file name works directly because it is in the same folder
 file_name = "mock_market.csv" #state out the file name
 

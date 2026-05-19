@@ -6,7 +6,7 @@ file_name = "mock_market_data.csv"
 
 if not os.path.exists(file_name):
     print("-> Yahoo Finance download bypassed. Generating local data structure...")
-    date_range = pd.date_range(start="17-05-2025", periods=365, freq="D") #in period 365 _      frequency of Daily/Month/Year
+    date_range = pd.date_range(start="17-05-2025", periods=365, freq="D") #in period 365   /    frequency of Daily/Month/Year
 
     # 2. Set up the random simulation parameters
     np.random.seed(42)
