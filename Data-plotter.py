@@ -24,6 +24,7 @@ if not os.path.exists(file_name):
     # This multiplies the compounding changes sequentially
     price_path = starting_price * np.cumprod(1 + daily_returns)
     #cumprod = comulate product and join them chronologically
+    percentage_returns = daily_returns * 100
 
     # 3. Derive Open, High, Low, Close relative to that random price path
     open_prices = price_path
@@ -49,11 +50,12 @@ if not os.path.exists(file_name):
         'High': high_prices,
         'Low': low_prices,
         'Close': close_prices,
-        'Volume': random_volume
+        'Volume': random_volume,
+        'Daily Return (%)': percentage_returns
     })
 
     # Rounding prices to 2 decimal places to look like real stock prices
-    mock_data = mock_data.round({'Open': 2, 'High': 2, 'Low': 2, 'Close': 2})
+    mock_data = mock_data.round({'Open': 2, 'High': 2, 'Low': 2, 'Close': 2,'Daily Return (%)': 2})
 
     mock_data.to_csv(file_name, index=False)
     #pandas automatically set data 0,1,2 one-by-one ascending your datas
