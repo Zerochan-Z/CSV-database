@@ -37,12 +37,12 @@ Replace `(value)`, `[index]`, `"name"` with your own data.
 | `np.random.randint(low, high, size, dtype)` | Random integers `low` to `high-1`. |
 | `np.random.normal(mean, std, size)` | Normal distribution numbers. |
 | `np.cumprod(array)` | Cumulative product. |
-| `np.cumsum(array)` | Cumulative sum. |
-| `np.exp(array)` | Exponential. |
+| `np.cumsum(array)` | Cumulative sum. [works with .exp to form {multiplier}] |
+| `np.exp(array)` | Exponential. {e^(array)} |
 | `np.maximum(a, b)` | Element‑wise max. |
 | `np.minimum(a, b)` | Element‑wise min. |
-| `np.abs(array)` | Absolute value. |
-| `np.zeros(length)` | Array of zeros. |
+| `np.abs(array)` | No negative num for multiplier always be linked with .max/.min |
+| `np.zeros(length)` | Creates array {datas} to store (days) |
 
 ## 📈 Price Simulation (Random Walk)
 
@@ -54,8 +54,8 @@ Replace `(value)`, `[index]`, `"name"` with your own data.
 | `percentage_returns = returns * 100` | Decimals → percentages. |
 | `open_prices[i] = closed_prices[i-1]` | Today's open = yesterday's close. |
 | `close = open * (1 + random_move)` | Intraday move to get close. |
-| `high = max(open,close) * (1 + positive_random)` | High = max(open,close) + wick. |
-| `low = min(open,close) * (1 - positive_random)` | Low = min(open,close) – wick. |
+| `high = max(open,close) * (1 + positive_random)` | -> A rule
+| `low = min(open,close) * (1 - positive_random)` | --> A rule
 | `volume = np.random.randint(low, high, days, dtype=np.int64)` | Random integer volume. |
 
 ## 📊 Matplotlib (Plotting)
