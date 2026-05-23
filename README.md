@@ -32,10 +32,10 @@ Replace `(value)`, `[index]`, `"name"` with your own data.
 
 | Code | Meaning |
 |------|---------|
-| `np.random.seed(integer)` | Fix random sequence. |
+| `np.random.seed(integer)` | Fix integer of data |
 | `np.random.uniform(low, high, size)` | Random floats between `low` and `high`. |
 | `np.random.randint(low, high, size, dtype)` | Random integers `low` to `high-1`. |
-| `np.random.normal(mean, std, size)` | Normal distribution numbers. |
+| `np.random.normal(mean, S.D, size)` | Normal distribution numbers. |
 | `np.cumprod(array)` | Cumulative product. |
 | `np.cumsum(array)` | Cumulative sum. [works with .exp to form {multiplier}] |
 | `np.exp(array)` | Exponential. {e^(array)} |
@@ -50,7 +50,7 @@ Replace `(value)`, `[index]`, `"name"` with your own data.
 |------|---------|
 | `starting_price = value` | First day's price. |
 | `daily_returns = np.random.uniform(min, max, days)` | Daily changes in % (decimal). |
-| `price_path = start * np.cumprod(1 + returns)` | Closing price path. |
+| `open_prices = start * np.cumprod(1 + returns)` | Closing open price. |
 | `percentage_returns = returns * 100` | Decimals → percentages. |
 | `open_prices[i] = closed_prices[i-1]` | Today's open = yesterday's close. |
 | `close = open * (1 + random_move)` | Intraday move to get close. |
@@ -68,7 +68,7 @@ Replace `(value)`, `[index]`, `"name"` with your own data.
 | `plt.title("text", fontsize=n, fontweight="bold")` | Title. |
 | `plt.xlabel("text")` | X‑axis label. |
 | `plt.ylabel("text")` | Y‑axis label. |
-| `plt.xticks(positions, rotation=deg)` | Tick positions and rotation. |
+| `plt.xticks({Data variable}[which to which], rotation=deg)` | Tick positions and rotation. |
 | `plt.grid(True, linestyle="--", alpha=0.5)` | Dashed grid, half transparent. |
 | `plt.legend(loc="position")` | Legend box. |
 | `plt.tight_layout()` | Fix overlapping labels. |
