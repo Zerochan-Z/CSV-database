@@ -12,22 +12,19 @@ if not os.path.exists(file_name):
     np.random.seed(42)
     # Keeps the random numbers the same every time you run it
     #Without a seed: If you run the code again to find the bug, the prices change, the crash disappears, and you can't fix your code.
-
     #With a seed: The exact same sequence of prices generates every single time, letting you pause, inspect your variables, and fix your code reliably.
     starting_price = 60000
 
     # Generate random daily percentage changes (returns) between -2% and +2%
     daily_returns = np.random.uniform(-0.02, 0.02, 365)
-                    #random -> random data #uniform -> only between -2% and 2 %
+                    #random -> randomize #uniform -> only between -2% and 2 %
 
     # Accumulate the returns to create a realistic price path (Random Walk)
     # This multiplies the compounding changes sequentially
-    price_path = starting_price * np.cumprod(1 + daily_returns)
-    #cumprod = comulate product and join them chronologically
+    open_prices = starting_price * np.cumprod(1 + daily_returns)
+    #cumprod = cumulate product and join them chronologically
     percentage_returns = daily_returns * 100
 
-    # 3. Derive Open, High, Low, Close relative to that random price path
-    open_prices = price_path
     # Close is the open price plus/minus another small random intraday move
     close_prices = open_prices * (1 + np.random.uniform(-0.01, 0.01, 365))
 
@@ -40,7 +37,6 @@ if not os.path.exists(file_name):
 
     # randint (low,high)  = random integer between these numbers
     # np.random.uniform = random decimals between the numbers
-    #
     random_volume = np.random.randint(3000000000, 4000000000, 365, dtype=np.int64)
 
     # 4. Put it all into the DataFrame

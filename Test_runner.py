@@ -8,7 +8,7 @@ import pandas as pd
 file_name = "mock_market.csv" #state out the file name
 
 try: #attempt to run this code
-    #df setting data as data frame (layout?)
+    #df = a variable name
     df = pd.read_csv(file_name) #using pd to read
     #read_csv = Read the file using csv format
     #set the data in a table according to the comma

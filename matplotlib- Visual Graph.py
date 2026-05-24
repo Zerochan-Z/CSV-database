@@ -15,13 +15,13 @@ daily_returns = np.random.normal(0.0005, 0.015, days)
 # SD (+/{after np.random.normal generates} >> -) -> combine with mean to check the growth/delay of market
 #                                                   restricted between +0.015 < S.D < -0.015
 closed_prices = 60000 * np.exp(np.cumsum(daily_returns))
+# np.exp = running total scoreboard for each day and translates it into a multiplier
 # cumsum = combine daily_returns and determine whether the market growth / delay
-#np.exp = running total scoreboard for each day and translates it into a multiplier
 
 
 # Structure the candlestick components perfectly
 open_prices = np.zeros(days)
-#Creates array {data's collection} }to store (days) opening prices
+#Creates array {datas} to store (days) opening prices
 open_prices[0] = 60000
 for i in range(1, days):
     open_prices[i] = closed_prices[i - 1]
