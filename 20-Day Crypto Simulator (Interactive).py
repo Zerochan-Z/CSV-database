@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as mpl
 
 np.random.seed(42)
-days=7
+days=20
 date_range = pd.date_range(start="17/05/2025", periods=days, freq='D')
 file_name='wencoin_data.csv'
 
