@@ -5,11 +5,11 @@ import matplotlib.pyplot as mpl
 
 np.random.seed(42)
 days=25
-date_range = pd.date_range(start="17/05/2025", periods=days, freq='D')
-file_name='wencoin_data.csv'
+date_range = pd.date_range(start="1/05/2026", periods=days, freq='D')
+file_name=f'{days} days-wencoin_data.csv'
 
 if not os.path.exists(file_name):
-    print('Generating the local data structure....')
+    print(f'Generating {days} of local data structure....\n')
 
 
     daily_returns=np.random.normal(0.0008, 0.02, days)
@@ -85,7 +85,7 @@ try:
             mpl.title('Wencoin Price Chart Window',fontsize=12,fontweight='bold')
             mpl.xlabel('Date')
             mpl.ylabel('Closing Price ($)')
-            mpl.xticks(df['Date'],rotation=45)
+            mpl.xticks(df['Date'][::5],rotation=45)
             mpl.grid(True,linestyle='--',alpha=0.5)
             mpl.legend(loc='upper left')
             mpl.tight_layout()
@@ -99,7 +99,7 @@ try:
         else:
             print('Please enter a number')
 
-    print('Thanks for using ☜(ﾟヮﾟ☜)')
+    print('\nThanks for using ☜(ﾟヮﾟ☜)\n')
 
 except Exception as e:
     print(f"Pipeline error: {e}")
