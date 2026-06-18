@@ -1,6 +1,5 @@
 ## ✅ README.md – Wencoin Crypto Simulator (Combined)
 
-```markdown
 # 📈 Wencoin Crypto Simulator
 
 A Python program that generates synthetic cryptocurrency price data using a random walk model. Available in two versions: **Interactive (25-day)** with a data viewer menu, and **Non-Interactive (7-day)** for quick preview.
